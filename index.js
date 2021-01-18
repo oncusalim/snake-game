@@ -8,7 +8,7 @@
 	var hedefx = 440;  var hedefy = 300;
 	
 function myFunction() {
-	
+	var text=""
 	var i ; 
 	var demo; 
 	yilanboyu = yilanx.length;
@@ -38,13 +38,16 @@ function myFunction() {
 	
 	document.getElementById("hedef").style.left =  hedefx + "px";	
 	document.getElementById("hedef").style.top =  hedefy + "px";
+
 	for (i=0; i<yilanboyu; i++) {
 		demo = "demo" + (i+1) ; 
-		
-	document.getElementById(demo).style.left =  yilanx[i] + "px";	
-	document.getElementById(demo).style.top =  yilany[i] + "px";
-		
+	
+		 text +="<span id='" +demo+
+		"' style='position: absolute; left:"+ yilanx[i]+ 
+		"px; top:" +yilany[i]+ "px;'  width='10' height='10'> &#128515</span>"
+
 	}
+	document.getElementById("myDiv").innerHTML = text;
 	
 	if (hedefx == yilanx[0] && hedefy == yilany[0]) {
 			yilanboyu++ ;  x = x-1;
